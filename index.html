@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Surat Perintah Tugas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Generator Surat Perintah Tugas</h1>
+        <p>Aplikasi untuk membuat SPT Inspektorat Provinsi Lampung secara otomatis.</p>
+
+        <form id="spt-form">
+            <fieldset>
+                <legend>1. Detail Pengawasan</legend>
+                <label for="jenis_pengawasan">Jenis Pengawasan:</label>
+                <input type="text" id="jenis_pengawasan" placeholder="Contoh: Audit Kinerja" required>
+
+                <label for="dinas">Dinas/Instansi yang Diawasi:</label>
+                <input type="text" id="dinas" placeholder="Contoh: Dinas Pendidikan dan Kebudayaan" required>
+
+                <label for="tahun_pengawasan">Tahun Anggaran Pengawasan:</label>
+                <input type="number" id="tahun_pengawasan" placeholder="Contoh: 2025" value="2025" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Personil yang Ditugaskan</legend>
+                <p class="info">Pilih personil dari daftar di bawah. <strong>Orang pertama yang Anda pilih akan menjadi Ketua Tim.</strong></p>
+                <div id="personnel-list">
+                    <p>Memuat data personil...</p>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>3. Waktu Pelaksanaan & Penetapan</legend>
+                <div class="date-group">
+                    <div>
+                        <label for="tanggal_mulai">Tanggal Mulai Tugas:</label>
+                        <input type="date" id="tanggal_mulai" required>
+                    </div>
+                    <div>
+                        <label for="tanggal_berakhir">Tanggal Berakhir Tugas:</label>
+                        <input type="date" id="tanggal_berakhir" required>
+                    </div>
+                </div>
+                <label for="tanggal_surat_dibuat">Tanggal Surat Ditetapkan:</label>
+                <input type="date" id="tanggal_surat_dibuat" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Detail Penanda Tangan</legend>
+                <label for="jabatan_penandatangan">Jabatan Penanda Tangan:</label>
+                <input type="text" id="jabatan_penandatangan" value="INSPEKTUR" required>
+
+                <label for="nama_penandatangan">Nama Penanda Tangan:</label>
+                <input type="text" id="nama_penandatangan" value="Dra. BAYANA M.Si, CGCAE" required>
+
+                <label for="pangkat_penandatangan">Pangkat Penanda Tangan:</label>
+                <input type="text" id="pangkat_penandatangan" value="Pembina Utama Madya/ IV.d" required>
+
+                <label for="nip_penandatangan">NIP Penanda Tangan:</label>
+                <input type="text" id="nip_penandatangan" value="196904011990032004" required>
+            </fieldset>
+
+            <button type="submit" id="generate-btn">Generate Surat Tugas (.docx)</button>
+        </form>
+         <footer class="footer">
+            <p>Dibuat di Bandar Lampung, &copy; 2025</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.5/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.47.1/docxtemplater.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
